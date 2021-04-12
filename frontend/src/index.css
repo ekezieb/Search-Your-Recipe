@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700&display=swap");
+* {
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  outline: none;
+}
+html {
+  font-size: 85%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 0.1rem;
+  font-family: Ubuntu;
+  font-style: italic;
+  color: #40b48e;
+
+  text-transform: uppercase;
+  margin: 4rem 0;
+}
+.noalert {
+  position: absolute;
+
+  left: 0;
+  background-color: rgb(233, 72, 72);
+  width: calc(100% - 0.4rem);
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+}
+.yesalert {
+  position: absolute;
+
+  left: 0;
+  background-color: #4bca81;
+  width: calc(100% - 0.4rem);
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+}
+
+.noalert .yesalert h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+}
+.profile img {
+  width: 150px;
+}
+.profile .user {
+  display: inline-block;
+}
+.toogle-btn img {
+  width: 40px;
+}
+
+.btn img {
+  width: 20px;
+}
+
+.b {
+  display: inline-block;
+}
+.search-form {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d3d3d3;
+  border-radius: 0.5rem;
+  margin-bottom: 5rem;
+
+  position: relative;
+}
+.search-form input {
+  font-size: 1.6rem;
+  border: none;
+  border-bottom: 0.1rem solid #ccc;
+  margin: 0 0.5rem;
+  border-radius: 0.5rem;
+  height: 3rem;
+}
+
+.search-form input[type="text"] {
+  padding: 0 0.5rem;
+  width: 60%;
+  color: #555;
+}
+
+.search-form input[type="submit"] {
+  width: 25%;
+  text-transform: uppercase;
+  background-color: #40b48e;
+  color: #fff;
+}
+
+.recipes {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.recipe {
+  width: 20rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #d3d3d3;
+  padding: 2rem;
+  position: relative;
+  border-radius: 0.5rem;
+}
+
+.recipe h2 {
+  background-color: rgba(161, 161, 161, 0.7);
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  right: 2.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-shadow: 0 0.5rem 0.5rem #555;
+  color: #fff;
+}
+
+.recipe img {
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.recipe button {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #40b48e;
+  border: none;
+  border-radius: 0.5rem;
+  height: 3rem;
+}
+.recipe #delete {
+  background-color: black;
+}
+
+.ingredient-list {
+  margin-top: 1rem;
+  background-color: #f0f0f0;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.ingredient-list li {
+  margin: 0.5rem 0;
+}
+
+.ingredient-text {
+  font-size: 1.5rem;
+  color: #888;
+}
+.pagination-a {
+  color: black;
+}
+.paginate-container {
+  display: inline-block;
+  padding: 1rem;
+  border-radius: 0.2rem;
+  margin: 0.5rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.paginate-container > li {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+}
+
+/*.paginate-container > li > a {
+  display: block;
+}*/
+
+.paginate-previous,
+.paginate-next,
+.paginate-page {
+  border-radius: 0.2rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  border: #bbb solid 1px;
+}
+
+.paginate-previous:hover,
+.paginate-next:hover,
+.paginate-page:hover {
+  background-color: #bbb;
+}
+
+.paginate-page.paginate-active {
+  padding: 0.75rem 1.25rem;
+}
+.paginate-active,
+.paginate-active:hover {
+  font-weight: 500;
+  color: #fff;
+
+  background-color: #00bcd4;
+  cursor: default;
+}
+
+.paginate-disabled:hover,
+.paginate-disabled {
+  background-color: #7a7a7a;
+  color: #bbb;
+}
+
+.paginate-container li {
+  display: inline-block;
+  cursor: pointer;
+}
+.paginate-disabled:hover {
+  cursor: not-allowed;
+}
+
+.nav-logo img {
+  width: 50px;
+}
+
+.form-add {
+  max-width: 350px;
+  margin: auto;
+  border-radius: 5px;
+
+  padding: 20px;
+}
+.form-add input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.form-add button {
+  width: 100%;
+  padding: 12px 20px;
+
+  display: inline-block;
+}
