@@ -36,11 +36,8 @@ function MyAuth() {
             return cb(null, false);
           }
 
-          console.log("Login successfull");
-          console.log("USER!!! ", user.username);
           return cb(null, user);
         } catch (err) {
-          console.log("Error finding user", user);
           return cb(err);
         }
       })
@@ -86,22 +83,13 @@ function MyAuth() {
     );
 
     router.get("/logout", function (req, res) {
-      req.session.destroy(function (err) {
-        res.redirect("/"); //Inside a callback… bulletproof!
-      });
+      req.logout();
+      res.redirect("/");
     });
 
     router.get("/getUser", (req, res) => {
       console.log("get user", req.user);
       res.send({ user: req.user ? req.user : null });
-    });
-
-    router.get("/create", (req, res) => {
-      if (req.user !== null) {
-        res.sendFile(path.join(__dirname, "/create"));
-      } else {
-        res.redirect("/");
-      }
     });
 
     return router;
