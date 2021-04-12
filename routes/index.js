@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const path = require("path");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
@@ -70,7 +69,7 @@ router.post("/DeletePost", async (req, res) => {
   };
 
   try {
-    const ingredients = await myDB.DeletePost(data);
+    await myDB.DeletePost(data);
   } catch (e) {
     res.status(400).send({ err: e });
     console.log("Error", e);

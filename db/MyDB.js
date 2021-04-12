@@ -22,6 +22,7 @@ function MyDB() {
       const resEmail = await userCol.findOne({
         email: auth.email,
       });
+
       if (!resEmail) {
         const res = await userCol.insertOne(auth);
         console.log("Inserted", res);
