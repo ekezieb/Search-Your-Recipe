@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "start": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www",
-    "build": "cd frontend && yarn install && yarn run build",
     "heroku-postbuild": "cd frontend && yarn install && yarn run build"
   },
   "dependencies": {
