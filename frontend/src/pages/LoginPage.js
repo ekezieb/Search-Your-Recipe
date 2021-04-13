@@ -30,7 +30,7 @@ export default function LoginPage() {
     const res = await fetch("/logout");
 
     if (res) {
-      window.location.href = "/";
+      window.location.href = "/home";
     }
 
     setUser(null);

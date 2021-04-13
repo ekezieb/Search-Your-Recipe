@@ -5,7 +5,7 @@ const Toogle = () => {
 
   useEffect(() => {
     const data = window.localStorage.getItem("mytoogle");
-    console.log("hello " + data);
+
     setShow(JSON.parse(data));
     if (data === "false") {
       document.body.style = "background: #121212;";

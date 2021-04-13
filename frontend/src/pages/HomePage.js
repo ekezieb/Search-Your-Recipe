@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Recipe from "../components/Recipe";
 import Pagination from "../components/Pagination.js";
+import NoAlert from "../components/NoAlert";
 
 export default function HomePage() {
   const [query, setQuery] = useState("");
   const [foods, setfood] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [alert, setAlert] = useState("");
   const postsPerPage = 10;
 
   const onChangeSearch = (e) => {
@@ -31,7 +33,16 @@ export default function HomePage() {
     });
 
     const res = await response.json();
-    setfood(res.ingredients);
+    console.log(res);
+
+    console.log(res.ingredients);
+    if (res.ingredients.length === 0 && query !== "") {
+      setAlert("Sorry, we could not find anything that matches!");
+      setfood([]);
+    } else {
+      setfood(res.ingredients);
+    }
+
     //console.log(food);
   };
 
@@ -40,12 +51,14 @@ export default function HomePage() {
   const onSubmit = (e) => {
     e.preventDefault();
     if (e.target.value !== "") {
+      setAlert("");
       getData();
     }
   };
 
   return (
     <div className="row">
+      {alert !== "" && <NoAlert alert={alert} />}
       <div className="col">
         <h1>Search Your Recipe</h1>
         <form onSubmit={onSubmit} className="search-form">
@@ -60,10 +73,12 @@ export default function HomePage() {
           <input type="submit" value="Search" />
         </form>
       </div>
+
       <div className="recipes">
         {currentPosts !== [] &&
           currentPosts.map((food, i) => <Recipe key={i} recipe={food} />)}
       </div>
+
       <Pagination
         postsPerPage={postsPerPage}
         totalPosts={foods.length}

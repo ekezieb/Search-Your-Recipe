@@ -32,9 +32,7 @@ router.post("/signup", async (req, res) => {
 // data endpoint for posts
 router.post("/GetIngredients", async (req, res) => {
   delete req.session.msg;
-  const item =
-    req.body.item.charAt(0).toUpperCase() +
-    req.body.item.slice(1).replace(/\s+/g, "");
+  const item = req.body.item.charAt(0).toUpperCase() + req.body.item.slice(1);
 
   try {
     const ingredients = await myDB.GetIngredients(item);
@@ -86,9 +84,7 @@ router.post("/PostIngredients", async (req, res) => {
   const recipe = req.body.recipe;
   const user = req.body.user;
 
-  const item =
-    req.body.item.charAt(0).toUpperCase() +
-    req.body.item.slice(1).replace(/\s+/g, "");
+  const item = req.body.item.charAt(0).toUpperCase() + req.body.item.slice(1);
 
   const data = {
     full_name: full_name,

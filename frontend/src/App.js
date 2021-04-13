@@ -29,7 +29,7 @@ function App() {
         <Route exact path="/create">
           {!user ? <HomePage /> : <CreatePage username={user} />}
         </Route>
-        <Route exact path="/">
+        <Route exact path="/home">
           <HomePage />
         </Route>
         <Route exact path="/signup">
