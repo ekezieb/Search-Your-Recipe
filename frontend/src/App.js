@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 import HomePage from "./pages/HomePage.js";
 import CreatePage from "./pages/CreatePage.js";
@@ -27,13 +32,13 @@ function App() {
       <NavigationComponent username={user}></NavigationComponent>
       <Switch>
         <Route path="/create" exact>
-          {!user ? <HomePage /> : <CreatePage username={user} />}
+          {user ? <CreatePage username={user} /> : <HomePage />}
         </Route>
         <Route path="/" exact>
           <HomePage />
         </Route>
         <Route path="/signup" exact>
-          {user ? <HomePage /> : <SignupPage />}
+          {!user ? <SignupPage /> : <HomePage />}
         </Route>
       </Switch>
       <Toogle></Toogle>

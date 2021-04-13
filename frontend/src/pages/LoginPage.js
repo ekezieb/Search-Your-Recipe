@@ -4,7 +4,7 @@ import NoAlert from "../components/NoAlert";
 export default function LoginPage() {
   const [inputemail, setinputemail] = useState("");
   const [inputpassword, setinputpassword] = useState("");
-  const [alert, setAlert] = useState("");
+
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -14,7 +14,6 @@ export default function LoginPage() {
       setUser(res.user);
     };
 
-    setAlert("");
     checkUser();
   }, []);
 
@@ -74,10 +73,5 @@ export default function LoginPage() {
       </button>
     </div>
   );
-  return (
-    <div>
-      {user ? logoutForm : loginForm}
-      {alert !== "" && <NoAlert alert={alert} />}
-    </div>
-  );
+  return <div>{user ? logoutForm : loginForm}</div>;
 }

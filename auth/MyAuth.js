@@ -74,13 +74,11 @@ function MyAuth() {
     router.post(
       "/signin",
       passport.authenticate("local", {
-        successRedirect: "/create",
         failureRedirect: "/",
       }),
 
       function (req, res) {
         res.redirect("/create");
-        res.redirect("/");
       }
     );
 
