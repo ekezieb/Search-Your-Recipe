@@ -77,6 +77,10 @@ function MyAuth() {
         successRedirect: "/create",
         failureRedirect: "/",
       }),
+
+      function (req, res) {
+        res.redirect("/create");
+      },
       function (req, res) {
         res.redirect("/");
       }
