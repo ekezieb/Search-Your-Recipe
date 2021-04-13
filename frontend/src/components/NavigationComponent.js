@@ -1,6 +1,5 @@
 import LoginPage from "../pages/LoginPage";
 import { Link, useLocation } from "react-router-dom";
-import PropTypes from "prop-types";
 
 export default function NavigationComponent({ username }) {
   const location = useLocation();
@@ -58,6 +57,3 @@ export default function NavigationComponent({ username }) {
     </nav>
   );
 }
-NavigationComponent.propTypes = {
-  username: PropTypes.string.isRequired,
-};

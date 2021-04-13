@@ -6,7 +6,7 @@ export default function HomePage() {
   const [query, setQuery] = useState("");
   const [foods, setfood] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 6;
+  const postsPerPage = 10;
 
   const onChangeSearch = (e) => {
     setQuery(e.target.value);

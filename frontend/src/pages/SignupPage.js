@@ -28,7 +28,7 @@ export default function SignupPage() {
       const res = await response.json();
 
       if (res.verify) {
-        setAlert("Signup successful");
+        setAlert("Signup successful. Please login to share recipe.");
       } else {
         setAlert("Email already in use");
       }
@@ -68,7 +68,9 @@ export default function SignupPage() {
     <div className="row">
       {alert !== "" &&
         alert !== "Email already in use" &&
-        alert !== "Signup successful" && <NoAlert alert={alert} />}
+        alert !== "Signup successful. Please login to share recipe." && (
+          <NoAlert alert={alert} />
+        )}
       {alert !== "" &&
         alert !== "Email already in use" &&
         alert !==
@@ -76,7 +78,7 @@ export default function SignupPage() {
           <YesAlert alert={alert} />
         )}
       {alert !== "" &&
-        alert !== "Signup successful" &&
+        alert !== "Signup successful. Please login to share recipe." &&
         alert !==
           "Invaild entree! Password must be 8 or more characters. Try again." && (
           <NoAlert alert={alert} />

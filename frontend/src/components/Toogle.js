@@ -1,7 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Toogle = () => {
   const [show, setShow] = useState(true);
+
+  useEffect(() => {
+    const data = window.localStorage.getItem("mytoogle");
+    console.log("hello " + data);
+    setShow(JSON.parse(data));
+    if (data === "false") {
+      document.body.style = "background: #121212;";
+    } else {
+      document.body.style = "background: none;";
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("mytoogle", JSON.stringify(show));
+  });
 
   const LightMode = () => {
     setShow(false);
