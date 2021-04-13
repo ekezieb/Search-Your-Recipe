@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import NoAlert from "../components/NoAlert";
 
 export default function LoginPage() {
   const [inputemail, setinputemail] = useState("");

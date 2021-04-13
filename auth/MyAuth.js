@@ -78,7 +78,7 @@ function MyAuth() {
       }),
 
       function (req, res) {
-        res.redirect("/create");
+        res.redirect("/");
       }
     );
 
