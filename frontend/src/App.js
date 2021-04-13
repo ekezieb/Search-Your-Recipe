@@ -26,13 +26,13 @@ function App() {
     <Router>
       <NavigationComponent username={user}></NavigationComponent>
       <Switch>
-        <Route path="/create" exact>
+        <Route exact path="/create">
           {user ? <CreatePage username={user} /> : <HomePage />}
         </Route>
-        <Route path="/" exact>
+        <Route exact path="/">
           <HomePage />
         </Route>
-        <Route path="/signup" exact>
+        <Route exact path="/signup">
           {!user ? <SignupPage /> : <HomePage />}
         </Route>
       </Switch>
