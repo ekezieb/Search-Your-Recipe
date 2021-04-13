@@ -7,7 +7,7 @@ export default function NavigationComponent({ username }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <Link className="navbar-brand nav-logo" to="/home">
+        <Link className="navbar-brand nav-logo" to="/">
           <img src="/img/dishes.png" alt="Profile" />
         </Link>
         <button

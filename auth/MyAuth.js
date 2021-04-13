@@ -75,16 +75,16 @@ function MyAuth() {
       "/signin",
       passport.authenticate("local", {
         successRedirect: "/create",
-        failureRedirect: "/home",
+        failureRedirect: "/",
       }),
       function (req, res) {
-        res.redirect("/home");
+        res.redirect("/");
       }
     );
 
     router.get("/logout", function (req, res) {
       req.logout();
-      res.redirect("/home");
+      res.redirect("/");
     });
 
     router.get("/getUser", (req, res) => {
