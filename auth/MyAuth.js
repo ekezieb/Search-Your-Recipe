@@ -74,7 +74,7 @@ function MyAuth() {
     router.post(
       "/signin",
       passport.authenticate("local", {
-        succuessRedirect: "/create",
+        successRedirect: "/create",
         failureRedirect: "/",
       }),
 
