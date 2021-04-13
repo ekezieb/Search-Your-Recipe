@@ -80,8 +80,6 @@ function MyAuth() {
 
       function (req, res) {
         res.redirect("/create");
-      },
-      function (req, res) {
         res.redirect("/");
       }
     );

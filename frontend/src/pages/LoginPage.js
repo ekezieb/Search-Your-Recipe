@@ -16,8 +16,6 @@ export default function LoginPage() {
 
     setAlert("");
     checkUser();
-    if (user !== null) {
-    }
   }, []);
 
   const handleChangeInput = (event) => {
