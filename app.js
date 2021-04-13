@@ -21,8 +21,8 @@ app.use(
   })
 );
 myAuth.setupPassport(app);
-app.use(express.static(path.join(__dirname, "frontend/build")));
 
+app.use(express.static(path.join(__dirname, "frontend/build")));
 app.use("/", myAuth.authRouter());
 app.use("/", indexRouter);
 
