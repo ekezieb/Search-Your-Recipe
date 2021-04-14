@@ -23,6 +23,16 @@ export default function NavigationComponent({ username }) {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link
+                className={
+                  "nav-link" + (location.pathname === "/" ? " active" : "")
+                }
+                to="/"
+              >
+                Home
+              </Link>
+            </li>
             {username && (
               <li className="nav-item">
                 <Link
