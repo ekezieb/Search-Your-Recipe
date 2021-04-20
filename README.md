@@ -1,7 +1,7 @@
 # Search-Your-Recipe
 
 ## Authors:
-Bernard Ekezie & Yuehan Pei
+Bernard Ekezie
 
 # Project Objective:
 Website where users can search food and recipes and upload their own recipes.
